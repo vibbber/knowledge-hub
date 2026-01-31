@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+import { strategies } from '../../data/strategies';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+  return strategies.map(s => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const strategy = strategies.find(s => s.slug === slug)!;
+
+// Read the HTML content from processed books
+const processedDir = path.resolve('../../processed');
+const htmlPath = path.join(processedDir, strategy.bookSlug, 'strategies', `${slug}.html`);
+
+let htmlContent = '';
+try {
+  const raw = fs.readFileSync(htmlPath, 'utf-8');
+  // Extract just the body content (strip the standalone HTML wrapper)
+  const bodyMatch = raw.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+  htmlContent = bodyMatch ? bodyMatch[1] : raw;
+  // Also extract any inline styles from the original
+  const styleMatch = raw.match(/<style[^>]*>([\s\S]*?)<\/style>/gi);
+  var originalStyles = styleMatch ? styleMatch.join('\n') : '';
+} catch (e) {
+  htmlContent = '<p>Strategy content not available.</p>';
+  var originalStyles = '';
+}
+---
+
+<Base title={`${strategy.title} | Kung Fu Family`} description={strategy.excerpt}>
+
+  <nav class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        All Strategies
+      </a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">{strategy.title}</span>
+    </div>
+  </nav>
+
+  <article class="strategy-content">
+    <Fragment set:html={originalStyles} />
+    <Fragment set:html={htmlContent} />
+  </article>
+
+  <footer class="strategy-footer">
+    <div class="footer-inner">
+      <p class="source-info">
+        Source: <strong>{strategy.book}</strong> by Rudolf Steiner
+      </p>
+      <a href="/" class="back-btn">Browse All Strategies</a>
+    </div>
+  </footer>
+
+  <style>
+    .breadcrumb {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .breadcrumb-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    .breadcrumb-sep { color: var(--text-muted); }
+    .breadcrumb-current { color: var(--text-secondary); }
+
+    .strategy-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    .strategy-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    .footer-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .source-info {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .back-btn:hover { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+
+</Base>
