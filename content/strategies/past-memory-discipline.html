@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past-Memory Discipline Technique | Steiner</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', system-ui, sans-serif;
+      background: #FDF6E3;
+      color: #2D3748;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #5C8A5A;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .core-principle {
+      background: linear-gradient(135deg, #5C8A5A 0%, #68A868 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .core-principle h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .why-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #E8A598;
+    }
+    .why-section h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+    .comparison-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .comparison-card.wrong .card-header {
+      background: #FED7D7;
+      color: #C53030;
+    }
+    .comparison-card.right .card-header {
+      background: #C6F6D5;
+      color: #276749;
+    }
+    .card-header {
+      padding: 0.75rem 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .card-content {
+      padding: 1.25rem;
+    }
+    .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .card-content ul {
+      list-style: none;
+      padding: 0;
+    }
+    .card-content li {
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+    .steps {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .steps h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .step {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .step:last-child {
+      border-bottom: none;
+    }
+    .step-number {
+      background: #E8A598;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+    .step-content p {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    .example {
+      background: #F7FAFC;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .example h4 {
+      color: #5C8A5A;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .example-scenario {
+      font-style: italic;
+      color: #718096;
+      margin-bottom: 0.75rem;
+    }
+    .benefits {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .benefits h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .benefits ul {
+      list-style: none;
+    }
+    .benefits li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .benefits li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: #5C8A5A;
+      font-weight: 700;
+    }
+    .source {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #718096;
+    }
+  </style>
+</head>
+<body>
+  <h1>Past-Memory Discipline Technique</h1>
+  <p class="subtitle">Using Time Distance to Build Character Instead of Creating Resistance</p>
+
+  <div class="core-principle">
+    <h2>The Core Insight</h2>
+    <p>"If you need to correct, then sit with the child and speak about an <strong>earlier misbehavior</strong>, since the child is past it and no longer feels what occurred earlier. <strong>Feelings become numb and go a very different way than thoughts and memory.</strong>"</p>
+  </div>
+
+  <div class="why-section">
+    <h3>Why This Works</h3>
+    <p>When you address a misbehavior in the moment, you're fighting against the child's active feelings—their defensiveness, shame, anger, or justification. These feelings create resistance that blocks learning.</p>
+    <p style="margin-top: 0.75rem;">When you wait and discuss a <em>past</em> event, the feelings have faded but the memory remains. The child can examine their behavior objectively, without emotional armor. This is when character actually forms.</p>
+  </div>
+
+  <div class="comparison">
+    <div class="comparison-card wrong">
+      <div class="card-header">Present-Moment Correction</div>
+      <div class="card-content">
+        <p><strong>What happens:</strong></p>
+        <ul>
+          <li>Child is emotionally activated</li>
+          <li>Defensive mechanisms engaged</li>
+          <li>Child focused on feelings, not learning</li>
+          <li>Creates conflict and resistance</li>
+          <li>Adult often speaks from anger</li>
+          <li>Message lost in emotional noise</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="comparison-card right">
+      <div class="card-header">Past-Memory Correction</div>
+      <div class="card-content">
+        <p><strong>What happens:</strong></p>
+        <ul>
+          <li>Child is emotionally calm</li>
+          <li>Can examine behavior objectively</li>
+          <li>Memory is accessible without trigger</li>
+          <li>Discussion feels collaborative</li>
+          <li>Adult speaks from intention, not reaction</li>
+          <li>Character-building actually occurs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <h3>How to Apply This Technique</h3>
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>In the Moment: Contain, Don't Correct</h4>
+        <p>Address immediate safety or disruption with minimal words. Set boundaries without lecturing. Save the teaching for later.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Wait for Time Distance</h4>
+        <p>Let hours, days, or even weeks pass. The optimal time is when the child has completely moved on emotionally from the incident.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Create a Calm, Connected Setting</h4>
+        <p>Sit with the child in a relaxed way—perhaps during a quiet moment together. This is not a confrontation setup.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>Gently Recall the Memory</h4>
+        <p>"Remember when you [describe the incident]?" Allow the child to recall it themselves. They can access the memory without the emotional charge.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>Discuss Objectively</h4>
+        <p>Explore what happened, why, what could have been different. The child can now think about it rather than feel about it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4>Example Application</h4>
+    <p class="example-scenario">Child hit their sibling three weeks ago. In the moment, you separated them and addressed safety. Now:</p>
+    <p>"Remember a few weeks ago when you hit your brother? What was happening right before that? ... What do you think was going on for you? ... What might you do differently if you felt that way again?"</p>
+    <p style="margin-top: 0.75rem; font-size: 0.9rem;">The child can now examine the behavior as if watching a movie of themselves, rather than defending against accusation.</p>
+  </div>
+
+  <div class="benefits">
+    <h3>Character-Building Effects</h3>
+    <ul>
+      <li><strong>Strengthens character</strong> by allowing objective self-reflection</li>
+      <li><strong>Develops conscience</strong> through internal examination rather than external pressure</li>
+      <li><strong>Creates sympathy</strong> for others affected by their behavior</li>
+      <li><strong>Builds self-knowledge</strong> as the child learns to understand their own patterns</li>
+      <li><strong>Preserves relationship</strong> by avoiding power struggles in charged moments</li>
+    </ul>
+  </div>
+
+  <p class="source">Source: Rudolf Steiner, "Interests, Talents, and Educating Children" (Nuremberg, 1910)</p>
+</body>
+</html>

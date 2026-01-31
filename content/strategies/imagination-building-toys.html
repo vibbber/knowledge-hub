@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagination-Building Toys Guide | Steiner</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', system-ui, sans-serif;
+      background: #FDF6E3;
+      color: #2D3748;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #5C8A5A;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .core-idea {
+      background: linear-gradient(135deg, #5C8A5A 0%, #68A868 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .core-idea h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+    .toy-type {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .toy-header {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .toy-type.good .toy-header {
+      background: #C6F6D5;
+      color: #276749;
+    }
+    .toy-type.bad .toy-header {
+      background: #FED7D7;
+      color: #C53030;
+    }
+    .toy-content {
+      padding: 1.25rem;
+    }
+    .example {
+      background: #F7FAFC;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .example-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #5C8A5A;
+      margin-bottom: 0.5rem;
+    }
+    .effect {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #E2E8F0;
+    }
+    .effect strong {
+      color: #5C8A5A;
+    }
+    .toy-type.bad .effect strong {
+      color: #C53030;
+    }
+    .principle {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #E8A598;
+    }
+    .principle h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .good-toys {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .good-toys h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .toy-list {
+      list-style: none;
+    }
+    .toy-list li {
+      padding: 0.6rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .toy-list li:last-child {
+      border-bottom: none;
+    }
+    .toy-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #5C8A5A;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .toy-name {
+      font-weight: 600;
+    }
+    .toy-why {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+    .bad-toys {
+      background: #FFF5F5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .bad-toys h3 {
+      color: #C53030;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .bad-toys li::before {
+      content: "✗";
+      color: #C53030;
+    }
+    .test {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 2px solid #5C8A5A;
+    }
+    .test h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .test-question {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .source {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #718096;
+    }
+    @media print {
+      body { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Imagination-Building Toys Guide</h1>
+  <p class="subtitle">Choosing Toys That Develop the Brain vs. Toys That Stunt It</p>
+
+  <div class="core-idea">
+    <h2>The Brain-Building Principle</h2>
+    <p>"If children have the folded napkin before them, they have to fill in from their own imagination what is necessary to make it real and human. <strong>This work of the imagination shapes and builds the forms of the brain.</strong> The brain unfolds as the muscles of the hand unfold when they do the work they are suited for."</p>
+  </div>
+
+  <div class="comparison">
+    <div class="toy-type good">
+      <div class="toy-header">Brain-Building Toys</div>
+      <div class="toy-content">
+        <div class="example">
+          <div class="example-title">The Napkin Doll</div>
+          <p>A folded napkin with two corners for legs, two for arms, a knot for the head, and ink blots for eyes and mouth.</p>
+        </div>
+        <div class="effect">
+          <strong>Effect:</strong> Child must imagine the face, the personality, the life. This imaginative work literally develops the brain's structures.
+        </div>
+      </div>
+    </div>
+
+    <div class="toy-type bad">
+      <div class="toy-header">Brain-Stunting Toys</div>
+      <div class="toy-content">
+        <div class="example">
+          <div class="example-title">The "Pretty" Doll</div>
+          <p>A doll with real hair, painted cheeks, detailed features, and a fixed expression.</p>
+        </div>
+        <div class="effect">
+          <strong>Effect:</strong> Nothing left to imagine. "Instead of unfolding, the brain becomes stunted and dried up."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="principle">
+    <h3>Why This Matters Before Age 7</h3>
+    <p>During the first seven years, physical organs are literally being shaped. The brain is not fixed at birth—it develops its permanent structures based on what the child does. Imagination is the "exercise" that builds brain capacity. Finished toys that require no imagination are like putting a cast on healthy muscles.</p>
+  </div>
+
+  <div class="good-toys">
+    <h3>Good Toy Choices</h3>
+    <ul class="toy-list">
+      <li>
+        <span class="toy-name">Simple wooden figures</span>
+        <div class="toy-why">Undefined shapes that can be anything the child imagines</div>
+      </li>
+      <li>
+        <span class="toy-name">Cloth or napkin dolls</span>
+        <div class="toy-why">Features suggested rather than finished—child fills in the personality</div>
+      </li>
+      <li>
+        <span class="toy-name">Wooden smiths hammering an anvil</span>
+        <div class="toy-why">Represents living action, movement, work</div>
+      </li>
+      <li>
+        <span class="toy-name">Picture books with movable figures</span>
+        <div class="toy-why">Child transforms static images into living action by pulling threads</div>
+      </li>
+      <li>
+        <span class="toy-name">Natural materials (sticks, stones, shells)</span>
+        <div class="toy-why">Completely open-ended—can become anything</div>
+      </li>
+      <li>
+        <span class="toy-name">Simple blocks of various shapes</span>
+        <div class="toy-why">Build anything, not constrained to one outcome</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="bad-toys">
+    <h3>Toys to Avoid</h3>
+    <ul class="toy-list">
+      <li>
+        <span class="toy-name">Dolls with realistic features</span>
+        <div class="toy-why">Nothing left for imagination—face, expression, clothes all fixed</div>
+      </li>
+      <li>
+        <span class="toy-name">Toys with "dead mathematical forms"</span>
+        <div class="toy-why">Geometric perfection kills the formative forces</div>
+      </li>
+      <li>
+        <span class="toy-name">Electronic toys that do things for the child</span>
+        <div class="toy-why">Child watches rather than creates</div>
+      </li>
+      <li>
+        <span class="toy-name">Highly detailed action figures</span>
+        <div class="toy-why">Character, story, and expression already determined</div>
+      </li>
+      <li>
+        <span class="toy-name">Single-purpose toys</span>
+        <div class="toy-why">Can only be used one way—no room for transformation</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="test">
+    <h3>The Imagination Test</h3>
+    <p class="test-question">Before buying a toy, ask:</p>
+    <p>"Does this toy require my child to imagine something to make it complete, or is everything already done?"</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #718096;">The more the child must add from imagination, the more the brain develops. The less the child must add, the more the brain atrophies.</p>
+  </div>
+
+  <p class="source">Source: Rudolf Steiner, "The Education of the Child in the Light of Spiritual Science" (1907)</p>
+</body>
+</html>

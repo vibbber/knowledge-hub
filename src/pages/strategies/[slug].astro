@@ -11,9 +11,9 @@ export function getStaticPaths() {
 const { slug } = Astro.params;
 const strategy = strategies.find(s => s.slug === slug)!;
 
-// Read the HTML content from processed books
-const processedDir = path.resolve('../../processed');
-const htmlPath = path.join(processedDir, strategy.bookSlug, 'strategies', `${slug}.html`);
+// Read the HTML content from local content folder
+const contentDir = path.resolve('content/strategies');
+const htmlPath = path.join(contentDir, `${slug}.html`);
 
 let htmlContent = '';
 try {

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Environment for Child Temperament | Steiner</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', system-ui, sans-serif;
+      background: #FDF6E3;
+      color: #2D3748;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #5C8A5A;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .principle {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #5C8A5A;
+    }
+    .principle h2 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .color-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 600px) {
+      .color-cards { grid-template-columns: 1fr; }
+    }
+    .color-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .color-band {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    .color-card.excitable .color-band {
+      background: linear-gradient(135deg, #E53E3E 0%, #ED8936 100%);
+    }
+    .color-card.lethargic .color-band {
+      background: linear-gradient(135deg, #3182CE 0%, #38B2AC 100%);
+    }
+    .color-content {
+      padding: 1.25rem;
+    }
+    .color-content h3 {
+      color: #2D3748;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .temperament-signs {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 1rem;
+    }
+    .temperament-signs strong {
+      color: #2D3748;
+    }
+    .color-flow {
+      background: #F7FAFC;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .flow-item {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .flow-arrow {
+      display: inline-block;
+      padding: 0 0.5rem;
+      color: #A0AEC0;
+    }
+    .excitable .flow-item:first-child { background: #FED7D7; color: #C53030; }
+    .excitable .flow-item:last-child { background: #C6F6D5; color: #276749; }
+    .lethargic .flow-item:first-child { background: #BEE3F8; color: #2B6CB0; }
+    .lethargic .flow-item:last-child { background: #FEEBC8; color: #C05621; }
+    .effect-label {
+      font-size: 0.8rem;
+      color: #718096;
+      margin-top: 0.5rem;
+    }
+    .apply-section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .apply-section h3 {
+      color: #5C8A5A;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .apply-list {
+      list-style: none;
+    }
+    .apply-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .apply-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #E8A598;
+      font-weight: 700;
+    }
+    .warning {
+      background: #FFF5F5;
+      border: 1px solid #FEB2B2;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+    }
+    .warning h4 {
+      color: #C53030;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .source {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #718096;
+    }
+    @media print {
+      body { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Color Environment for Child Temperament</h1>
+  <p class="subtitle">Using Complementary Colors to Balance Excitable and Lethargic Children</p>
+
+  <div class="principle">
+    <h2>How It Works</h2>
+    <p>When children are surrounded by a color, their eyes and nervous system automatically generate the <strong>complementary color</strong> internally. This internal color creation is what affects the child's temperament—not the external color itself.</p>
+    <p style="margin-top: 0.75rem;">You can verify this yourself: stare at a red surface for 30 seconds, then quickly look at a white surface. You'll see green. This is the complementary color your system creates.</p>
+  </div>
+
+  <div class="color-cards">
+    <div class="color-card excitable">
+      <div class="color-band">EXCITABLE CHILD</div>
+      <div class="color-content">
+        <h3>Surround with: Red / Reddish-Yellow</h3>
+        <div class="temperament-signs">
+          <strong>Signs:</strong> Nervous, overstimulated, restless, emotionally reactive, difficulty settling
+        </div>
+        <div class="color-flow">
+          <span class="flow-item">External: RED</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">Internal: GREEN</span>
+          <div class="effect-label">Green has a calming effect on the organs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="color-card lethargic">
+      <div class="color-band">LETHARGIC CHILD</div>
+      <div class="color-content">
+        <h3>Surround with: Blue / Bluish-Green</h3>
+        <div class="temperament-signs">
+          <strong>Signs:</strong> Low energy, passive, slow to engage, unmotivated, sluggish responses
+        </div>
+        <div class="color-flow">
+          <span class="flow-item">External: BLUE</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-item">Internal: ORANGE</span>
+          <div class="effect-label">Orange has an energizing effect on the organs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="apply-section">
+    <h3>Where to Apply Colors</h3>
+    <ul class="apply-list">
+      <li><strong>Room walls and curtains</strong> — The dominant colors in the child's bedroom or playroom</li>
+      <li><strong>Clothing</strong> — Especially everyday clothes and pajamas</li>
+      <li><strong>Bedding</strong> — Sheets, blankets, pillows</li>
+      <li><strong>Play area</strong> — Rugs, mats, and play furniture</li>
+      <li><strong>Objects in constant view</strong> — Art on walls, lamps, accessories</li>
+    </ul>
+  </div>
+
+  <div class="apply-section">
+    <h3>Complementary Color Pairs</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr style="background: #F7FAFC;">
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #E2E8F0;">External Color</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #E2E8F0;">Creates Internally</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid #E2E8F0;">Effect</th>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Red</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Green</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Calming</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Orange</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Blue</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Cooling</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Yellow</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Violet</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Deepening</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Blue</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Orange</td>
+        <td style="padding: 0.75rem; border-bottom: 1px solid #E2E8F0;">Energizing</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem;">Violet</td>
+        <td style="padding: 0.75rem;">Yellow</td>
+        <td style="padding: 0.75rem;">Brightening</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="warning">
+    <h4>Common Mistake</h4>
+    <p>Intuition often leads us to do the opposite—giving a calm, lethargic child soothing blue, or surrounding an excitable child with calming green. This actually reinforces the existing tendency instead of balancing it. Remember: the external color produces the <em>opposite</em> effect internally.</p>
+  </div>
+
+  <p class="source">Source: Rudolf Steiner, "The Education of the Child in the Light of Spiritual Science" (1907)</p>
+</body>
+</html>
