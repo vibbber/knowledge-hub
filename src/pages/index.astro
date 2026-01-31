@@ -59,7 +59,11 @@ const topicGradients: Record<string, { gradient: string; icon: string }> = {
         return (
           <a href={`/strategies/${s.slug}/`} class="card" data-topic={s.topic} data-type={s.type}>
             <div class="card-image" style={`background: ${style.gradient}`}>
-              <div class="card-image-placeholder">{style.icon}</div>
+              {s.image ? (
+                <img src={s.image} alt={s.imageAlt || s.title} loading="lazy" />
+              ) : (
+                <div class="card-image-placeholder">{style.icon}</div>
+              )}
             </div>
             <div class="card-overlay">
               <div class="card-tags">
