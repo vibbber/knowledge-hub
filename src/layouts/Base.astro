@@ -73,6 +73,37 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   </style>
 </head>
 <body>
+  <!-- Simple password gate for dev -->
+  <div id="password-gate" style="display:none; position:fixed; inset:0; background:#fafaf8; z-index:9999; display:flex; align-items:center; justify-content:center;">
+    <div style="text-align:center; font-family:'DM Sans',sans-serif;">
+      <h2 style="margin-bottom:16px; color:#2a2a2a;">Internal Preview</h2>
+      <input type="password" id="pw-input" placeholder="Password" style="padding:12px 16px; font-size:16px; border:1px solid #ddd; border-radius:8px; width:200px;">
+      <button onclick="checkPw()" style="margin-left:8px; padding:12px 20px; background:#c8922a; color:white; border:none; border-radius:8px; cursor:pointer; font-size:16px;">Enter</button>
+      <p id="pw-error" style="color:#c44; margin-top:12px; display:none;">Wrong password</p>
+    </div>
+  </div>
+  <script is:inline>
+    (function() {
+      if (localStorage.getItem('kf-auth') === 'donkey') {
+        document.getElementById('password-gate').style.display = 'none';
+      } else {
+        document.getElementById('password-gate').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    })();
+    function checkPw() {
+      if (document.getElementById('pw-input').value === 'donkey') {
+        localStorage.setItem('kf-auth', 'donkey');
+        document.getElementById('password-gate').style.display = 'none';
+        document.body.style.overflow = '';
+      } else {
+        document.getElementById('pw-error').style.display = 'block';
+      }
+    }
+    document.getElementById('pw-input')?.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPw();
+    });
+  </script>
   <slot />
 </body>
 </html>
