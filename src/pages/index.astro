@@ -50,13 +50,48 @@ import { strategies, topics, types } from '../data/strategies';
                 <div class="tile-placeholder" />
               )}
             </div>
-            <div class="tile-overlay">
-              <div class="tile-tags">
-                <span class="tile-tag">{s.topic}</span>
-                {s.ageRange && <span class="tile-tag age">Ages {s.ageRange}</span>}
+            {s.forProblems ? (
+              <!-- New card format - text below image -->
+              <div class="card-text-section">
+                <h2 class="card-name">{s.cardName || s.title}</h2>
+                <p class="card-oneliner">{s.oneLiner || s.excerpt}</p>
               </div>
-              <h2 class="tile-title">{s.title}</h2>
-            </div>
+              <div class="card-hover-details">
+                <div class="card-section">
+                  <div class="section-label">For</div>
+                  <ul class="section-list">
+                    {s.forProblems.split(/[;,]/).map(item => item.trim() && <li>{item.trim()}</li>)}
+                  </ul>
+                </div>
+                <div class="card-section">
+                  <div class="section-label">Approach</div>
+                  <ul class="section-list">
+                    {s.approach.split(/[.]/).filter(item => item.trim()).map(item => <li>{item.trim()}</li>)}
+                  </ul>
+                </div>
+                <div class="card-section">
+                  <div class="section-label">Evidence</div>
+                  <ul class="section-list">
+                    {s.evidence.split(/[;,]/).map(item => item.trim() && <li>{item.trim()}</li>)}
+                  </ul>
+                </div>
+                <div class="card-section">
+                  <div class="section-label">Inside</div>
+                  <ul class="section-list">
+                    {s.inside.split(/[;,]/).map(item => item.trim() && <li>{item.trim()}</li>)}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <!-- Legacy format -->
+              <div class="tile-overlay">
+                <div class="tile-tags">
+                  <span class="tile-tag">{s.topic}</span>
+                  {s.ageRange && <span class="tile-tag age">Ages {s.ageRange}</span>}
+                </div>
+                <h2 class="tile-title">{s.title}</h2>
+              </div>
+            )}
           </a>
         ))}
       </div>
@@ -166,17 +201,27 @@ import { strategies, topics, types } from '../data/strategies';
 
     .masonry {
       column-count: 4;
-      column-gap: 4px;
+      column-gap: 16px;
     }
 
     .tile {
-      display: block;
+      display: flex;
+      flex-direction: column;
       break-inside: avoid;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
       position: relative;
       overflow: hidden;
-      border-radius: 2px;
+      border-radius: 10px;
       cursor: pointer;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .tile:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
     }
 
     .tile-img {
@@ -194,7 +239,11 @@ import { strategies, topics, types } from '../data/strategies';
     }
 
     .tile:hover .tile-img img {
-      transform: scale(1.03);
+      transform: scale(1.02);
+    }
+
+    .tile:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
 
     .tile-placeholder {
@@ -249,6 +298,89 @@ import { strategies, topics, types } from '../data/strategies';
       font-size: 0.95rem;
       line-height: 1.25;
       color: white;
+    }
+
+    /* New card format - text below image */
+    .card-text-section {
+      padding: 14px 16px 16px;
+      background: white;
+    }
+
+    .card-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .card-oneliner {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 6px 0 0 0;
+      line-height: 1.4;
+    }
+
+    /* Hover details panel - covers entire card, triggered by image hover */
+    .card-hover-details {
+      position: absolute;
+      inset: 0;
+      background: rgba(20,20,20,0.95);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      overflow-y: auto;
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .tile-img:hover ~ .card-hover-details,
+    .card-hover-details:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-section {
+      margin-bottom: 10px;
+    }
+
+    .card-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2px;
+    }
+
+    .section-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .section-list li {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.35;
+      padding-left: 12px;
+      position: relative;
+      margin-bottom: 1px;
+    }
+
+    .section-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: rgba(255,255,255,0.5);
     }
 
     /* Hide tiles when filtered out */
@@ -316,7 +448,7 @@ import { strategies, topics, types } from '../data/strategies';
     }
 
     @media (max-width: 480px) {
-      .masonry { column-count: 2; }
+      .masonry { column-count: 1; }
     }
   </style>
 

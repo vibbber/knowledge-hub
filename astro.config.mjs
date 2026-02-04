@@ -8,4 +8,11 @@ export default defineConfig({
   output: 'static',
   site: 'https://kungfu.family',
   integrations: [sitemap()],
+  vite: {
+    server: {
+      watch: {
+        ignored: ['**/node_modules/**', '**/books/**', '**/processed/**', '**/logs/**']
+      }
+    }
+  }
 });

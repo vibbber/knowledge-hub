@@ -1,0 +1,10 @@
+{
+  "contents": [{
+    "parts": [{
+      "text": "Generate an image: Warm Arctic scene of calm parent-child connection, Inuit-inspired aesthetic. A parent and child in soft natural light, the mood is peaceful presence not words. Soft earth tones, natural materials, the warmth of human connection against cold landscape. Evokes discipline through calm and touch rather than voice. Painterly style, warm and grounded, not clinical. Aspect ratio 3:4 vertical."
+    }]
+  }],
+  "generationConfig": {
+    "responseModalities": ["TEXT", "IMAGE"]
+  }
+}
